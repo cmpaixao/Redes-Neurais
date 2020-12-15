@@ -1,0 +1,35 @@
+
+	# Imprime a primeira mensagem
+main:	addi $v0, $zero, 4
+	la $a0, mensagem
+	syscall
+
+	# Lê o primeiro numero digitado
+	addi $v0, $zero, 5
+	syscall
+
+	# Grava o numero digitado no Registrador $s0
+	add $s0, $zero, $v0
+
+	# Imprime a segunda mensagem
+	addi $v0, $zero, 4
+	la $a0, mensagem2
+	syscall
+
+	# Lê segundo numero digitado
+	addi $v0, $zero, 5
+	syscall
+
+	# Grava o segundo numero no Registrador $s1
+	add $s1, $zero, $v0
+
+	# Imprime a terceira mensagem
+	addi $v0, $zero, 4
+	la $a0, mensagem3
+	syscall
+
+	# Efetua a soma nos numeros digitados
+	addi $v0, $zero, 1
+	add $a0, $s0, $s1
+	syscall
+	jr$ra
